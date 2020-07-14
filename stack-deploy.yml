@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  api:
+    image: legmac/docker12m_api
+    restart: always
+  web:
+    image: legmac/docker12m_web
+    restart: always
+    links:
+        - api
+    ports:
+        - "80:80"
